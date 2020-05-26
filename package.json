@@ -7,10 +7,12 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "react-devtool": "react-devtools"
   },
   "dependencies": {
     "@react-native-community/geolocation": "^2.0.2",
+    "axios": "^0.19.2",
     "ngx-google-places-autocomplete": "^2.0.4",
     "react": "16.11.0",
     "react-native": "0.62.2",
@@ -25,6 +27,7 @@
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
+    "react-devtools": "^4.7.0",
     "react-test-renderer": "16.11.0"
   },
   "jest": {

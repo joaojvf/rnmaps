@@ -1,30 +1,25 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import {KEYS} from './../../Keys'
 import {Platform} from 'react-native'
 
 
-export default class Search extends Component {
-  state = {
-    searchFocused: false
-  }
-  render() {
-    const {searchFocused} = this.state
+const Search = (props) => {
+  const [searchFocused, setSearchFocused] = useState(false);  
+    
+  const {onLocationSelected} = props
     return (
       <GooglePlacesAutocomplete
         placegolder="Buscar Cidade"
-        onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-          console.log("EntroU", data, details);
-        }}
+        onPress={onLocationSelected}
         query={{
           key: KEYS.KEY_AUTOCOMPLETE,
           language: 'pt',
         }}
         textInputProps={{
-          onFocus: () => { this.setState({searchFocused: true})},
-          onBlur: () => { this.setState({searchFocused: false})},
+          onFocus: () => { setSearchFocused(true)},
+          onBlur: () => {setSearchFocused(false)},
           autoCapitalize: 'none',
           autoCorrect: false,
         }}
@@ -88,6 +83,7 @@ export default class Search extends Component {
       />
     );
   }
-}
 
+
+export default Search;
 
