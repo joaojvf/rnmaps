@@ -1,23 +1,16 @@
 import React from 'react';
-import Map from ''
-
-import {
-  StyleSheet,
-  View,
-  Text,
-} from 'react-native';
-
-import MapView, {
-  PROVIDER_GOOGLE,
-  Marker,
-  Callout,
-} from 'react-native-maps';
+import {NavigationContainer} from '@react-navigation/native';
+import MainStack from './src/navigators/MainStack';
+import Home from './src/Pages/Home'
+import MainTab from './src/navigators/MainTab';
 
 class App extends React.Component {
-  render(){
+  render() {
     return (
-      <Map></Map>
-    )
+      <NavigationContainer>
+        <MainTab />
+      </NavigationContainer>
+    );
   }
 }
 
