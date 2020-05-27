@@ -5,13 +5,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Home from '../Pages/Home';
 import MapaCovidMundial from '../components/Mapas/MapaCovidMundial';
 import MapaCovidBr from '../components/Mapas/MapaCovidBr';
+import MapaTeste from '../components/Mapas/MapaTeste'
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="MapaTeste"
       screenOptions={({route}) => ({
         tabBarIcon: ({focused, color, size}) => {
           let icon = 'add';
@@ -41,6 +42,11 @@ export default () => {
         name="MapaCovidMundial"
         component={MapaCovidMundial}
         options={{tabBarLabel: 'Mundo'}}
+      />
+      <Tab.Screen
+        name="MapaTeste"
+        component={MapaTeste}
+        options={{tabBarLabel: 'Teste'}}
       />
     </Tab.Navigator>
   );
